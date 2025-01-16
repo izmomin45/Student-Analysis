@@ -6,29 +6,46 @@ Dataset Description
 The dataset consists of the following columns:
 
 Hours_Studied: Weekly study hours by students.
-Attendance: Attendance percentage.
+
 Parental_Involvement: Engagement level of parents in students' education.
+
 Access_to_Resources: Availability of educational resources.
+
 Extracurricular_Activities: Participation in extracurricular activities.
+
 Sleep_Hours: Average daily sleep hours.
+
+
 Previous_Scores: Exam scores from previous assessments.
+
 Motivation_Level: Motivation level of students.
+
 Internet_Access: Internet availability (1 for Yes, 0 for No).
 Tutoring_Sessions: Number of tutoring sessions attended.
+
 Family_Income: Income level of the student's family.
+
 Teacher_Quality: Quality rating of teachers.
+
 School_Type: Type of school (e.g., public, private).
+
 Peer_Influence: Influence from peers.
+
+
 Physical_Activity: Engagement in physical activities.
+
 Learning_Disabilities: Presence of any learning disabilities.
+
 Parental_Education_Level: Education level of parents.
 Distance_from_Home: Distance of the school from the student’s home.
+
 Gender: Gender of the student.
+
 Exam_Score: Final exam score.
 SQL Analysis
 The following analyses were performed:
 
-General Averages:
+## General Averages:
 
 Average study hours per week.
 Average exam scores by gender.
