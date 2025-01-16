@@ -1,0 +1,190 @@
+create database Students 
+
+
+Select * from Students
+
+
+UPDATE Students
+SET Teacher_Quality = 'NA'
+WHERE Teacher_Quality IS  Null
+
+
+UPDATE Students
+SET Parental_Education_Level = 'NA'
+WHERE Parental_Education_Level IS Null;
+
+
+
+
+--Question 1
+SELECT
+Avg(Hours_Studied) as [ Avg Study Hour per Week ]
+FROM
+Students ;
+
+--Question  2
+SELECT
+ Gender, Avg(Exam_Score) as [ Avg Marks]
+FROM Students
+GROUP BY Gender;
+
+--Question 3
+SELECT
+Avg(Sleep_Hours) as [ Avg Sleep Hour ]
+from Students ;
+
+--Question 4
+SELECT
+COUNT(Internet_Access) as [Count of Std With Internet Connection]
+FROM Students
+WHERE Internet_Access=1;
+
+--Question 5
+SELECT  
+School_Type,count(School_Type) as [Count of School Type]
+FROM Students
+GROUP BY School_Type ;
+
+--Question 6
+SELECT
+Parental_Involvement , Avg(Exam_Score) as [Avg Marks ]
+FROM Students
+GROUP BY Parental_Involvement;
+
+
+--Question 7 
+SELECT 
+AVG (Exam_Score) as [Avg Exam Marks] ,Attendance  
+FROM Students
+WHERE Attendance between 90 And 99
+GROUP BY Attendance;
+
+
+--Question 8
+SELECT
+Family_Income ,Avg(Exam_Score) as [Avg Marks]
+FROM Students
+GROUP BY Family_Income;
+
+--Q9
+SELECT
+AVG(Exam_Score) as [New Score], AVG(Previous_Scores)[Old Score]
+FROM Students
+
+
+--Q10
+SELECT
+AVG(Exam_Score)[ Exams Score ], Tutoring_Sessions
+FROM Students
+--where Tutoring_Sessions=0
+GROUP BY Tutoring_Sessions
+
+
+--11
+
+SELECT
+Motivation_Level , COUNT(*) AS [Total] 
+FROM Students
+WHERE Physical_Activity=1
+GROUP BY Motivation_Level
+ORDER BY Total DESC;
+
+
+
+--12 
+SELECT
+Teacher_Quality,Avg(Exam_Score) as [Avg Marks]
+FROM Students
+GROUP BY Teacher_Quality;
+
+
+--13
+SELECT
+Distance_from_Home ,Avg(Attendance) as [Avg Attendance]
+FROM Students
+GROUP BY Distance_from_Home;
+
+
+--14
+select Extracurricular_Activities ,Avg(Exam_Score) as [Avg Marks]
+from Students
+Group by Extracurricular_Activities;
+
+
+--15
+SELECT
+Family_Income, COUNT(*) AS Counts
+FROM students
+WHERE Motivation_Level = 'Low' -- 'High '
+GROUP BY Family_Income
+ORDER BY Counts DESC;
+
+
+
+ --16
+SELECT Learning_Disabilities , Avg(Exam_Score) as [Avg Exam Score]
+FROM Students
+--where Learning_Disabilities =1
+GROUP BY Learning_Disabilities;
+
+
+--17
+--Parents Enrolments and Extra curricular Activities
+
+
+--18
+SELECT 
+Parental_Education_Level, Family_Income, AVG(Exam_Score) AS Average_Exam_Score
+FROM students
+GROUP BY Parental_Education_Level, Family_Income
+ORDER BY Average_Exam_Score DESC;
+
+
+
+
+--19
+SELECT
+Tutoring_Sessions , Access_to_Resources , AVG(Exam_Score) [Avg Score]
+FROM Students
+GROUP BY Tutoring_Sessions,Access_to_Resources;
+
+
+--20
+
+SELECT
+Teacher_Quality , School_Type , AVG(Exam_Score) [Avg Score]
+FROM Students
+GROUP BY School_Type , Teacher_Quality;
+
+
+--21
+SELECT
+    CASE 
+        WHEN Hours_Studied BETWEEN 0 AND 5 THEN '0-5'
+        WHEN Hours_Studied BETWEEN 6 AND 10 THEN '6-10'
+        WHEN Hours_Studied BETWEEN 11 AND 15 THEN '11-15'
+        WHEN Hours_Studied BETWEEN 16 AND 20 THEN '16-20'
+        WHEN Hours_Studied > 20 THEN '20+'
+    END AS Hours_Group,
+    Avg(Exam_Score) AS Avg_Exam_Score
+FROM
+    Students
+GROUP BY
+    CASE 
+        WHEN Hours_Studied BETWEEN 0 AND 5 THEN '0-5'
+        WHEN Hours_Studied BETWEEN 6 AND 10 THEN '6-10'
+        WHEN Hours_Studied BETWEEN 11 AND 15 THEN '11-15'
+        WHEN Hours_Studied BETWEEN 16 AND 20 THEN '16-20'
+        WHEN Hours_Studied > 20 THEN '20+'
+    END
+ORDER BY
+    Avg_Exam_Score DESC;
+
+
+
+
+
+
+
+
+
